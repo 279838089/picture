@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>LOVE</title>
+    <!-- Bootstrap -->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <style>
+  .container2{
+	background-image:url(background.JPG?v=1);
+	background-repeat: no-repeat;
+  background-size:100% 100%;
+	height:600px;
+	width:490px;
+  }
+  .love{
+  width:80px; 
+  height:12px; 
+  line-height:12px; 
+  position:absolute; 
+  top:560px; 
+  left:320px; 
+  margin-left:-24px; 
+  margin-top:-6px;
+  }
+  .distant1{color:#FFCC66;font-weight:bold;text-shadow:0 0 1px currentColor,-1px -1px 1px #030,0 -1px 1px #030,1px -1px 1px #030,1px 0 1px #030,1px 1px 1px #030,0 1px 1px #030,-1px 1px 1px #030,-1px 0 1px #030}
+  .distant1:after{content:'LOVE YOU YK';text-shadow:0 0 1px currentColor;-webkit-filter:url(#distant1);filter:url(#distant1)}
+
+  img
+	{
+	opacity:0.2;
+	filter:alpha(opacity=20); /* 针对 IE8 以及更早的版本 */
+	height:50px;
+	width:35px;
+	}
+	img:hover
+	{
+	opacity:0.9;
+	filter:alpha(opacity=90); /* 针对 IE8 以及更早的版本 */
+	}
+  </style>
+  <body>
+	<div class="container2">
+		<span class="love distant1"></span> 
+		 
+		  
+		
+	</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script>
+    function GetRandomNum(Min,Max)
+    {   
+      var Range = Max - Min;   
+      var Rand = Math.random();   
+      return(Min + Math.round(Rand * Range));   
+    }   
+		for(var i=1; i<169;i++){
+      j=GetRandomNum(1,3);
+			$(".container2").append("<img src='"+j+".JPG?v=1' class='pull-left'>");
+		}
+	</script>
+  </body>
+</html>
